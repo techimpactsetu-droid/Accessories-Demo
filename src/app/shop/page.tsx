@@ -167,7 +167,7 @@ export default function ShopPage() {
       </div>
 
       <div className="pt-6 border-t border-gray-100">
-        <Accordion type="multiple" defaultValue={["item-1"]}>
+        <Accordion defaultValue={["item-1"]}>
           <AccordionItem value="item-1" className="border-none">
             <AccordionTrigger className="font-playfair font-semibold text-base tracking-wide uppercase text-muted-foreground hover:no-underline py-2">Brand</AccordionTrigger>
             <AccordionContent>
@@ -222,7 +222,7 @@ export default function ShopPage() {
                 Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
               </span>
               
-              <Select value={sortBy} onValueChange={setSortBy}>
+              <Select value={sortBy} onValueChange={(val) => val && setSortBy(val)}>
                 <SelectTrigger className="w-[180px] bg-white rounded-full h-12 shadow-sm border-gray-200">
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
